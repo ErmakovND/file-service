@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+    id 'application'
+}
+
+group = 'nd.ermakov'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.62'
+    implementation 'org.springframework:spring-webmvc:5.3.18'
+    implementation 'commons-fileupload:commons-fileupload:1.4'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+application {
+    mainClassName = 'nd.ermakov.pdris.fileservice.TomcatKt'
+}
