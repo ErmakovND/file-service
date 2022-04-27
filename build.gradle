@@ -1,6 +1,8 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
 }
 
 group = 'nd.ermakov'
@@ -11,9 +13,21 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.62'
-    implementation 'org.springframework:spring-webmvc:5.3.18'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.78'
+
+    implementation 'org.thymeleaf:thymeleaf-spring5:3.0.15.RELEASE'
+
+    implementation 'org.springframework:spring-webmvc:5.3.19'
+    implementation 'org.springframework.data:spring-data-jdbc:2.3.4'
+
+    implementation 'org.slf4j:slf4j-simple:2.0.0-alpha7'
+
+    implementation 'org.hsqldb:hsqldb:2.6.1'
+
     implementation 'commons-fileupload:commons-fileupload:1.4'
+
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    runtimeOnly 'org.jetbrains.kotlin:kotlin-reflect:1.6.21'
 }
 
 compileKotlin {
