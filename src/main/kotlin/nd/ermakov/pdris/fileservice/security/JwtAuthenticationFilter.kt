@@ -17,7 +17,7 @@ class JwtAuthenticationFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        request.cookies.find { it.name == jwtCookie }?.value?.also { jwt ->
+        request.cookies?.find { it.name == jwtCookie }?.value?.also { jwt ->
             if (jwtService.verifyToken(jwt)) {
                 jwtService.decodeToken(jwt).subject
                     .let { UsernamePasswordAuthenticationToken.authenticated(it, null, emptyList()) }

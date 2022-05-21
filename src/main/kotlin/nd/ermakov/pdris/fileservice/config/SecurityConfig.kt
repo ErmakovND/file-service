@@ -50,7 +50,7 @@ class SecurityConfig(
             .successHandler(successHandler())
             .failureHandler(failureHandler())
         http.authorizeRequests()
-            .antMatchers("/").permitAll()
+            .antMatchers("/", "/actuator/**").permitAll()
             .anyRequest().authenticated()
         http.sessionManagement()
             .sessionCreationPolicy(STATELESS)
