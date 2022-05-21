@@ -1,9 +1,14 @@
 package nd.ermakov.pdris.fileservice.model
 
-import org.springframework.data.annotation.Id
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.Table
 
-data class User(
-    @Id var id: Int? = null,
+@Entity
+class User(
+    @Id @GeneratedValue var id: Long? = null,
     var name: String,
     var password: String
 )
