@@ -20,4 +20,8 @@ class FileServiceImpl(private val fileRepository: FileRepository) : FileService 
         return fileRepository.getFile(name) ?: throw FileNotFoundException()
     }
 
+    override fun getFileNames(): List<String> {
+        return fileRepository.getFileNames()
+    }
+
 }

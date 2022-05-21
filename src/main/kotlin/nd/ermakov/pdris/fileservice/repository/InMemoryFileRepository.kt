@@ -19,4 +19,8 @@ class InMemoryFileRepository : FileRepository {
     override fun hasFile(name: String): Boolean {
         return storage.containsKey(name)
     }
+
+    override fun getFileNames(): List<String> {
+        return storage.keys().toList()
+    }
 }

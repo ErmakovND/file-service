@@ -6,4 +6,5 @@ interface FileRepository {
     fun putFile(file: File)
     fun getFile(name: String): File?
     fun hasFile(name: String): Boolean
+    fun getFileNames(): List<String>
 }
