@@ -1,6 +1,14 @@
 package nd.ermakov.pdris.fileservice.model
 
-data class File(
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.Lob
+import javax.persistence.Table
+
+@Entity
+class File(
+    @Id @GeneratedValue var id: Long? = null,
     val name: String,
-    val data: ByteArray
+    @Lob val data: ByteArray
 )

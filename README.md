@@ -2,11 +2,15 @@
 
 ## Start
 
-To start the app, run from project root folder
+Build
 ```shell
-./gradlew run
+./gradlew clean bootJar
 ```
-The app will run at `localhost:9999`.
+Run docker
+```shell
+docker-compose up --build
+```
+The app will run at `localhost:8080`.
 
 ## Test
 

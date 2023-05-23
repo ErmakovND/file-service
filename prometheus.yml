@@ -1,0 +1,7 @@
+scrape_configs:
+  - job_name: 'job'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['app:8080']

@@ -6,4 +6,6 @@ interface FileService {
     fun putFile(file: File)
     fun getFile(name: String): File
     fun getFileNames(): List<String>
+    fun updateFileName(oldName: String, newName: String)
+    fun deleteFile(name: String)
 }
